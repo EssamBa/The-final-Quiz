@@ -6,6 +6,7 @@ let submitButton=document.querySelector(".submit-button");
 let bullets =document.querySelector(".bullets");
 let resultContainer = document.querySelector(".results");
 let countdownElement = document.querySelector('.countdown')
+let newGame=document.querySelector(".newGame")
 
 const startBtn=document.querySelector('#start');
 const screens= document.querySelectorAll('.screen');
@@ -183,7 +184,13 @@ function showResults(count){
         }
 
         resultContainer.innerHTML = theResult;
-        resultContainer.style.padding='10px'
+        resultContainer.style.padding='10px';
+        let newGameButton=document.createElement("button");
+        newGameButton.appendChild(document.createTextNode("New Game"));
+        newGame.appendChild(newGameButton);
+        newGameButton.onclick = function(){
+            window.location.reload();
+        }
     }
 }
 
